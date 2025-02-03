@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Analyst Consensus</title>
+</head>
+<body>
+    <h1>Predict Analyst Consensus</h1>
+    <form action="/predict" method="post">
+        <label for="Return_On_Equity(%)">Return On Equity (%):</label>
+        <input type="number" id="Return_On_Equity(%)" name="Return_On_Equity(%)" step="1" required><br><br>
+
+        <label for="OCI">OCI:</label>
+        <input type="number" id="OCI" name="OCI" step="0.1" required><br><br>
+
+        <label for="Combined_ratio_P&C_and_Disabilty(%)">Combined Ratio P&C and Disability (%):</label>
+        <input type="number" id="Combined_ratio_P&C_and_Disabilty(%)" name="Combined_ratio_P&C_and_Disabilty(%)" step="0.1" required><br><br>
+
+        <label for="Outstanding_shares(weighted_average)">Outstanding Shares (Weighted Average):</label>
+        <input type="number" id="Outstanding_shares(weighted_average)" name="Outstanding_shares(weighted_average)" step="1" required><br><br>
+
+        <label for="Open">Open:</label>
+        <input type="number" id="Open" name="Open" step="0.01" required><br><br>
+
+        <label for="Adj Close">Adj Close:</label>
+        <input type="number" id="Adj Close" name="Adj Close" step="0.01" required><br><br>
+
+        <label for="Volume">Volume:</label>
+        <input type="number" id="Volume" name="Volume" step="10" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+    <h2>Prediction Result</h2>
+    <p>Prediction: {{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
